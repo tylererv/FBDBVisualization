@@ -12,10 +12,10 @@ import visuals as viz
 # PAGE CONFIG
 # -----------------------------------------------------------------------------
 st.set_page_config(
-    page_title="NFL Analytics Hub",
+    page_title="NFLDB Analytics",
     page_icon="🏈",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # -----------------------------------------------------------------------------
@@ -44,7 +44,7 @@ col1, col2 = st.columns([1, 4])
 
 with col1:
     # This is a free Lottie animation of a football player
-    lottie_football = load_lottieurl("https://lottie.host/a2809a54-c20e-4fff-8c80-70b2899885e7/7vgWeRq8M1.json")
+    lottie_football = load_lottieurl("https://lottie.host/9ea6adc7-341f-44c3-b5c2-9ac701873d57/TWoBUq01BK.json")
     st_lottie(lottie_football, height=150, key="football_anim")
 
 with col2:
@@ -55,7 +55,7 @@ st.markdown("---") # Horizontal line separator
 
 # 2. Data Loading
 # We query the DB here. If your table names are different, change the SQL below!
-sql_query = "SELECT * FROM Players" 
+sql_query = "SELECT * FROM Players;" 
 df = db.get_data(sql_query)
 
 # 3. Top Level KPIs (Key Performance Indicators)

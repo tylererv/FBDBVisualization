@@ -4,20 +4,20 @@ import plotly.express as px
 def plot_qb_performance(df):
     """
     Creates an animated bubble chart showing Passing Yards vs Touchdowns
-    moving through the Weeks.
+    moving through the Years.
     """
     fig = px.scatter(
         df,
         x="PassingYards",
         y="Touchdowns",
-        animation_frame="Week",    # This creates the play button/slider
+        animation_frame="Year",    # This creates the play button/slider
         animation_group="Player",  # This tells Plotly which dot is which player
         size="PassingYards",       # Bubble size based on yards
         color="Team",              # Color by team
         hover_name="Player",
         range_x=[0, 500],          # Fixed range so the chart doesn't jump around
         range_y=[0, 6],
-        title="Quarterback Performance Evolution (Week by Week)",
+        title="Quarterback Performance Evolution (Year by Year)",
         template="plotly_dark"     # "Dark" theme looks modern/gaming style
     )
     
